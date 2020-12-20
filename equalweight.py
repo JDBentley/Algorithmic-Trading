@@ -23,3 +23,15 @@ data ['marketCap']
 my_columns = ['Ticker', 'Price', 'Market Capitalization', 'Number of Shares to Buy']
 final_dataframe = pd.DataFrame(columns = my_columns)
 print(final_dataframe)
+
+final_dataframe = final_dataframe.append(
+    pd.Series([
+        'AAPL', 
+        data['latestPrice'], 
+        data['marketCap'], 
+        'N/A'], 
+        index = my_columns
+    ),
+    ignore_index = True
+)
+print(final_dataframe)
